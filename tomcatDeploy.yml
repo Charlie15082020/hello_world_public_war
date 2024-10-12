@@ -25,12 +25,6 @@
       state: directory
       mode: 0777
 
-  - name: backup file with owner and permissions
-    copy:
-      src: /home/ec2-user/apache-tomcat-9.0.96/webapps/webapp.war
-      dest: /home/ec2-user/backup/webapp.war
-      remote_src: yes
-
   - name: Delete remote war file
     file:
       path: /home/ec2-user/opt/apache-tomcat-9.0.96/webapps/webapp.war
