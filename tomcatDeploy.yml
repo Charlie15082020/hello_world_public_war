@@ -39,5 +39,5 @@
   - name: deploy file with owner and permissions
     copy:
       src: /home/ec2-user/sourcefile/webapp.war
-      dest: /home/ec2-user/apache-tomcat-9.0.95/webapps/webapp.war
+      dest: /home/ec2-user/apache-tomcat-9.0.96/webapps/webapp.war
       remote_src: yes
