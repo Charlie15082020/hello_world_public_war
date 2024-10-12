@@ -25,6 +25,14 @@
       state: directory
       mode: 0777
 
+  - name: Create destination directory
+    file:
+      path: /home/ec2-user/opt/sourcefile
+      state: directory
+      owner: ec2-user
+      group: ec2-user
+      mode: 0755
+
   - name: backup file with owner and permissions
     copy:
       src: /home/ec2-user/opt/apache-tomcat-9.0.96/webapps/webapp.war
