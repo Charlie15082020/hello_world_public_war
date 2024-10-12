@@ -12,6 +12,12 @@
       state: directory
       mode: 0777
 
+  - name: Download war file
+  get_url:
+    url: "https://vina.jfrog.io/artifactory/pay_war-generic-local/appB/webapp-20.war"
+    dest: "/home/ec2-user/opt/apache-tomcat-9.0.96/webapps/webapp.war"
+    mode: '0755'
+
   - name: download war file
     ansible.builtin.get_url:                                                                                                
       url: https://vina.jfrog.io/artifactory/pay_war-generic-local/appB/webapp-{{ build_number }}.war
