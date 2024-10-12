@@ -12,6 +12,14 @@
       state: directory
       mode: 0777
 
+  - name: Create destination directory
+    file:
+      path: /home/ec2-user/opt/sourcefile
+      state: directory
+      owner: ec2-user
+      group: ec2-user
+      mode: 0755
+
   - name: download war file
     ansible.builtin.get_url:
       url: https://vina.jfrog.io/artifactory/pay_war-generic-local/appB/webapp-{{ build_number }}.war
@@ -24,14 +32,6 @@
       path: /home/ec2-user/backup
       state: directory
       mode: 0777
-
-  - name: Create destination directory
-    file:
-      path: /home/ec2-user/opt/sourcefile
-      state: directory
-      owner: ec2-user
-      group: ec2-user
-      mode: 0755
 
   - name: backup file with owner and permissions
     copy:
